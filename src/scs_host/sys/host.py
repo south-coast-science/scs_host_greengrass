@@ -20,11 +20,10 @@ class Host(Node):
     # directories and files...
 
     __HOME_DIR =            "/"                                 # hard-coded abs path
-    __SCS_DIR =             "SCS"                               # hard-coded rel path
 
+    __SCS_DIR =             "SCS"                               # hard-coded rel path
     __CONF_DIR =            "conf"                              # hard-coded rel path
     __AWS_DIR =             "aws"                               # hard-coded rel path
-    __OSIO_DIR =            "osio"                              # hard-coded rel path
 
     __LATEST_UPDATE =       "latest_update.txt"                 # hard-coded rel path
 
