@@ -74,7 +74,7 @@ class DomainSocket(ProcessComms):
                     raise ex
 
                 if self.__logger:
-                    self.__logger.info('DomainSocket.connect: waiting for availability.')
+                    self.__logger.warn('DomainSocket.connect: waiting for availability.')
 
                 time.sleep(self.__WAIT_FOR_AVAILABILITY)
 
