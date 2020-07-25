@@ -27,12 +27,11 @@ class MQTTClient(object):
     # ----------------------------------------------------------------------------------------------------------------
 
     def publish(self, publication):
-        payload = JSONify.dumps(publication.payload)
-
-        # self.__logger.info("publication: %s" % publication)
-        # self.__logger.info("payload: %s" % payload)
+        # self.__logger.info("publish: %s" % publication)
 
         try:
+            payload = JSONify.dumps(publication.payload)
+
             self.__client.publish(
                 topic=publication.topic,
                 queueFullPolicy='AllOrException',
