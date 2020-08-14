@@ -5,7 +5,11 @@ Created on 27 Jul 2020
 
 @author: Bruno Beloff (bruno.beloff@southcoastscience.com)
 
-{"tag": "scs-bgx-538", "src": "N3", "rec": "2020-07-14T08:48:39Z", "val": {"per": 4.9, "pm1": 2.4, "pm2p5": 4.6, "pm10": 13.8, "bin": [815, 83, 17, 4, 4, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "mtf1": 24, "mtf3": 29, "mtf5": 25, "mtf7": 35, "sfr": 5.67, "sht": {"hmd": 43.4, "tmp": 27.5}}, "exg": {"ISLin/N3/vLGW": {"pm1": 2.5, "pm2p5": 2.1, "pm10": 3.0}}}'
+{"tag": "scs-bgx-538", "src": "N3", "rec": "2020-07-14T08:48:39Z",
+"val": {"per": 4.9, "pm1": 2.4, "pm2p5": 4.6, "pm10": 13.8,
+"bin": [815, 83, 17, 4, 4, 3, 3, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+"mtf1": 24, "mtf3": 29, "mtf5": 25, "mtf7": 35, "sfr": 5.67, "sht": {"hmd": 43.4, "tmp": 27.5}},
+"exg": {"ISLin/N3/vLGW": {"pm1": 2.5, "pm2p5": 2.1, "pm10": 3.0}}}'
 """
 
 import json
