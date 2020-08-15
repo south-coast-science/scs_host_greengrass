@@ -25,6 +25,7 @@ class DomainSocket(ProcessComms):
 
     EOM = '\n'                              # end of message for client-server communications
 
+    __PERMISSIONS = 0o666                   # srw-rw-rw-
     __BACKLOG = 1                           # number of unaccepted connections before refusing new connections
     __BUFFER_SIZE = 1024
 
@@ -47,12 +48,11 @@ class DomainSocket(ProcessComms):
 
     # ----------------------------------------------------------------------------------------------------------------
 
-    def __init__(self, path, logger=None):
+    def __init__(self, path):
         """
         Constructor
         """
         self.__path = path                  # string
-        self.__logger = logger              # Logger (for compatibility only)
 
         self.__socket = None                # socket.socket
         self.__conn = None
@@ -67,6 +67,8 @@ class DomainSocket(ProcessComms):
     def accept(self):
         self.__socket.bind(self.path)
         self.__socket.listen(self.__BACKLOG)
+
+        os.chmod(self.path, self.__PERMISSIONS)
 
         self.__conn, _ = self.__socket.accept()
 
@@ -124,6 +126,8 @@ class DomainSocket(ProcessComms):
         self.__socket.bind(self.path)
         self.__socket.listen(DomainSocket.__BACKLOG)
 
+        os.chmod(self.path, self.__PERMISSIONS)
+
         try:
             while True:
                 self.__conn, _ = self.__socket.accept()
@@ -166,4 +170,4 @@ class DomainSocket(ProcessComms):
     # ----------------------------------------------------------------------------------------------------------------
 
     def __str__(self, *args, **kwargs):
-        return "DomainSocket:{path:%s, socket:%s}" % (self.path, self.__socket)
+        return "greengrass.DomainSocket:{path:%s, socket:%s}" % (self.path, self.__socket)
