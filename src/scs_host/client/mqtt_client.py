@@ -27,8 +27,6 @@ class MQTTClient(object):
     # ----------------------------------------------------------------------------------------------------------------
 
     def publish(self, publication):
-        # self.__logger.info("publish: %s" % publication)
-
         try:
             payload = JSONify.dumps(publication.payload)
 
