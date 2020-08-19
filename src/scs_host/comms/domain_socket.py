@@ -28,7 +28,6 @@ class DomainSocket(ProcessComms):
     __PERMISSIONS = 0o666                   # srw-rw-rw-
     __BACKLOG = 1                           # number of unaccepted connections before refusing new connections
     __BUFFER_SIZE = 1024
-
     __WAIT_FOR_AVAILABILITY = 1.0           # seconds
 
     # ----------------------------------------------------------------------------------------------------------------
