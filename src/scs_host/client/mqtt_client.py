@@ -2,6 +2,8 @@
 Created on 23 Jun 2020
 
 @author: Bruno Beloff (bruno.beloff@southcoastscience.com)
+
+https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#client
 """
 
 from enum import Enum
@@ -59,9 +61,13 @@ class MQTTClient(object):
 
             self.set_led(MQTTState.PUBLISHING)
 
+            return True
+
         except Exception as ex:
             self.__logger.error(repr(ex))
             self.set_led(MQTTState.QUEUING)
+
+            return False
 
 
     # ----------------------------------------------------------------------------------------------------------------
