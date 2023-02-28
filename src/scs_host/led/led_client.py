@@ -5,8 +5,7 @@ Created on 18 Aug 2020
 """
 
 from scs_core.data.json import JSONify
-
-from scs_dfe.led.led_state import LEDState
+from scs_core.led.led_state import LEDState
 
 
 # --------------------------------------------------------------------------------------------------------------------
