@@ -4,6 +4,10 @@ Created on 23 Jun 2020
 @author: Bruno Beloff (bruno.beloff@southcoastscience.com)
 
 https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iot-data.html#client
+https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html#mqtt-qos
+
+for future versions:
+https://docs.aws.amazon.com/greengrass/v2/developerguide/mqtt-broker-moquette-component.html
 """
 
 from enum import Enum
@@ -29,6 +33,9 @@ class MQTTClient(object):
     """
     classdocs
     """
+
+    __QOS = 1
+
     __PUBLISHING_STATE = {
         MQTTState.IDLE:                 ['A', 'R'],
         MQTTState.WAITING_FOR_DATA:     ['G', 'A'],
@@ -53,10 +60,13 @@ class MQTTClient(object):
         try:
             payload = JSONify.dumps(publication.payload)
 
+            # NB: qos is probably ignored
+
             self.__client.publish(
                 topic=publication.topic,
+                qos=self.__QOS,
                 queueFullPolicy='AllOrException',
-                payload=payload,
+                payload=payload
             )
 
             self.set_led(MQTTState.PUBLISHING)
