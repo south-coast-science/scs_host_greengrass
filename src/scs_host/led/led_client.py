@@ -42,4 +42,4 @@ class LEDClient(object):
     # ----------------------------------------------------------------------------------------------------------------
 
     def __str__(self, *args, **kwargs):
-        return "LEDClient:{led_uds:%s, logger:%s}" % (self.__led_uds, self.__logger)
+        return "LEDClient:{led_uds:%s}" % self.__led_uds

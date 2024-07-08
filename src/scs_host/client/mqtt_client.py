@@ -96,4 +96,4 @@ class MQTTClient(object):
     # ----------------------------------------------------------------------------------------------------------------
 
     def __str__(self, *args, **kwargs):
-        return "MQTTClient:{client:%s, led:%s, logger:%s}" % (self.__client, self.__led, self.__logger)
+        return "MQTTClient:{client:%s, led:%s}" % (self.__client, self.__led)
